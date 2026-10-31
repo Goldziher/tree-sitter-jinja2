@@ -12,17 +12,13 @@ publish = false
 license = "Apache-2.0"
 
 build = "bindings/rust/build.rs"
-include = [
-  "bindings/rust/*",
-  "grammar.js",
-  "src/*",
-]
+include = ["bindings/rust/*", "grammar.js", "src/*"]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "0.20.8"
+tree-sitter = "0.27.1"
 
 [build-dependencies]
 cc = "*"

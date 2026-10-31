@@ -6,13 +6,13 @@
 
 ```
 [dependencies]
-tree-sitter = "0.19"
+tree-sitter = "0.27.1"
 tree-sitter-jinja2 = { git = "ssh://git@github.com/dbt-labs/tree-sitter-jinja2", branch =" main" }
 ```
 
 ```rust
 let code = r#"This text supports {{ 'jinja' }}."#;
 let mut parser = tree_sitter::Parser::new();
-parser.set_language(tree_sitter_jinja2::language()).expect("Error loading jinja2 grammar");
+parser.set_language(&tree_sitter_jinja2::language()).expect("Error loading jinja2 grammar");
 let tree = parser.parse(code, None);
 ```
